@@ -19,9 +19,10 @@
             ed.addCommand('mceSketch', function () {
                 ed.windowManager.open({
                     file: ed.getParam('moodle_plugin_base') + 'sketch/tinymce/sketch.html',
-                    width: '500px',
-                    height: '500px',
-                    inline: 1
+                    width: document.documentElement.scrollWidth,
+                    height: document.documentElement.clientHeight - 30,
+                    inline: true,
+                    resizable: false
                 }, {
                     plugin_url: url, // Plugin absolute URL.
                 });

@@ -8,7 +8,7 @@
 
         <style type="text/css">
             .fullheight {
-                height: calc(100% - 15px);
+                height: calc(100% - 25px);
                 margin: 0;
             }
 
@@ -16,12 +16,16 @@
                 background-image: url(assets/img/tpback.png);
             }
 
-            #sketchsubmit {
-                width: 100px;
-                margin-top: 5px;
-                margin-left: 40%;
-                margin-right: 40%;
+            .sketchsubmit {
+                padding: 5px;
             }
+
+            .centerbutton {
+                margin-top: 5px;
+                text-align: center;
+                padding: 6px;
+            }
+
             .literally {
                 height: 100%;
                 width: 100%;
@@ -30,16 +34,18 @@
         </style>
         <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
         <script type="text/javascript" src="js/tiny_mce_popup.js"></script>
-        <script type="text/javascript" src="js/sketch.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-with-addons.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
 
         <!-- Literally Canvas -->
-        <script type="text/javascript" src="js/literallycanvas.min.js"></script> 
+        <script type="text/javascript" src="js/literallycanvas.min.js"></script>
     </head>
     <body class="fullheight">
         <div class="literally"></div>
-        <button class="mdl-align" id="sketchsubmit" style="">Insert Sketch</button>
+        <div class="centerbutton">
+            <button class="sketchsubmit" style="">Insert Sketch</button>
+        </div>
+
         <script type="text/javascript" >
             $(document).ready(function() {
                 var lc = LC.init(document.getElementsByClassName('literally')[0],
@@ -53,8 +59,8 @@
                     newImage.src = selected.src;
                     lc.saveShape(LC.createShape('Image', {x: 10, y: 10, image: newImage}));
                 }
-                
-                $('#sketchsubmit').click(function(e) {
+
+                $('.sketchsubmit').click(function(e) {
                     e.preventDefault();
                     console.log(lc);
                     var imgstring = lc.getImage().toDataURL(),
@@ -62,6 +68,12 @@
                     window.parent.tinyMCE.activeEditor.execCommand('mceInsertContent', 0, sketch);
                     tinyMCEPopup.close();
                 });
+
+                $('div[role="dialog"]',parent.document).css('top', $(parent.document).scrollTop())
+                $('div[role="dialog"]',parent.document).css('left', $(parent.document).scrollLeft());
+
+                $('div[role="dialog"]',parent.document).css('height', 'calc(100% - 0px)');
+                $('div[role="dialog"]',parent.document).css('width', 'calc(100% - 0px)');
             });
         </script>
     </body>
