@@ -3,34 +3,12 @@
     <head>
         <title>Sketch and Save</title>
         <link href="assets/literallycanvas.css" rel="stylesheet" />
+        <link href="assets/sketch.css" rel="stylesheet" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, user-scalable=no" />
 
         <style type="text/css">
-            .fullheight {
-                height: calc(100% - 25px);
-                margin: 0;
-            }
-
-            .literally .toolbar-at-top {
-                background-image: url(assets/img/tpback.png);
-            }
-
-            .sketchsubmit {
-                padding: 5px;
-            }
-
-            .centerbutton {
-                margin-top: 5px;
-                text-align: center;
-                padding: 6px;
-            }
-
-            .literally {
-                height: 100%;
-                width: 100%;
-                position: relative;
-            }
+            
         </style>
         <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
         <script type="text/javascript" src="js/tiny_mce_popup.js"></script>
@@ -39,6 +17,7 @@
 
         <!-- Literally Canvas -->
         <script type="text/javascript" src="js/literallycanvas.min.js"></script>
+        <script type="text/javascript" src="js/extrashapes.js"></script>
     </head>
     <body class="fullheight">
         <div class="literally"></div>
@@ -50,7 +29,8 @@
             $(document).ready(function() {
                 var lc = LC.init(document.getElementsByClassName('literally')[0],
                 {
-                    imageURLPrefix: './assets/img'
+                    imageURLPrefix: './assets/img',
+                    tools: LC.defaultTools.concat([regularShapes])
                 });
 
                 var selected = window.parent.tinyMCE.activeEditor.selection.getNode();
@@ -62,7 +42,7 @@
 
                 $('.sketchsubmit').click(function(e) {
                     e.preventDefault();
-                    console.log(lc);
+
                     var imgstring = lc.getImage().toDataURL(),
                         sketch = '<img src="'+imgstring+'" />';
                     window.parent.tinyMCE.activeEditor.execCommand('mceInsertContent', 0, sketch);
