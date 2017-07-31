@@ -23,6 +23,6 @@
 
 $string['pluginname'] = 'Sketch';
 $string['sketchtitle'] = 'Sketch and Save';
-$string['sketchdescription'] = 'Quick sketch in Moodle';
-$string['sketchlongdescription'] = 'Draw and edit images inside any editor in Moodle';
+$string['sketch_description'] = 'Quick sketch in Moodle';
+$string['sketch_long_description'] = 'Draw and edit images inside any editor in Moodle';
 $string['insert'] = 'Insert Sketch';
