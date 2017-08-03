@@ -9,12 +9,11 @@ var regularShapes = function(lc) {  // take lc as constructor arg
     strokeWidth: lc.opts.defaultStrokeWidth,
 
     didBecomeActive: function(lc) {
-      $('.horz-toolbar').append('<span id="ls-tool-sides" style="margin-left:30px;font-size:2em" >\
+      $('.horz-toolbar').append('<span id="ls-tool-sides" >\
                                     Sides: \
                                     <input type = "text" \
                                             id = "ls-sides" \
-                                            value = "6" \
-                                            style = "width: 50px;margin: 2px;padding: 0px 5px;font-size: 20px;"/> \
+                                            value = "6" />\
                                 </span>');
       var centerX,
           centerY,
