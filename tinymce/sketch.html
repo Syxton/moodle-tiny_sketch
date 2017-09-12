@@ -64,7 +64,8 @@
                         // Only handle the event if an image file was dropped in.
                         var handlesDataTransfer = (sketchimage && sketchimage.size && sketchimage.type == 'image/png');
                         if (handlesDataTransfer) {
-                                var options = parent.M.editor_tinymce.filepicker_options['id_summary_editor'].image,
+                                var host = parent.tinyMCE.activeEditor.editorId,
+                                options = parent.M.editor_tinymce.filepicker_options[host].image,
                                 savepath = (options.savepath === undefined) ? '/' : options.savepath,
                                 formData = new FormData(),
                                 timestamp = 0,
