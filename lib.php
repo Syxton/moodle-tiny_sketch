@@ -50,6 +50,11 @@ class tinymce_sketch extends editor_tinymce_plugin {
         $params['sketchdescription'] = get_string('sketch_description', 'tinymce_sketch');
         $params['sketchlongdescription'] = get_string('sketch_long_description', 'tinymce_sketch');
 
+        $storeinrepo = $this->get_config('storeinrepo');
+        if (!empty($storeinrepo)) {
+            $params['storeinrepo'] = $storeinrepo;
+        }
+
         if ($row = $this->find_button($params, 'moodlenolink')) {
             // Add button after 'moodlenolink'.
             $this->add_button_after($params, $row, 'sketch', 'moodlenolink');

@@ -15,17 +15,16 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Atto text editor integration version file.
+ * Sketch settings.
  *
- * @package    tinymce_sketch
- * @copyright  2017 Matt Davidson <davidso1@rose-hulman.com>
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   tinymce_sketch
+ * @copyright 2017 Matt Davidson
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
-$plugin->version   = 2017091200;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->release   = '1';
-$plugin->requires  = 2015111600;        // Requires this Moodle version.
-$plugin->component = 'tinymce_sketch';
-$plugin->maturity = MATURITY_STABLE;
+if ($ADMIN->fulltree) {
+    $settings->add(new admin_setting_configcheckbox('tinymce_sketch/storeinrepo',
+        get_string('storeinrepo', 'tinymce_sketch'), get_string('storeinrepo_desc', 'tinymce_sketch'), 0));
+}

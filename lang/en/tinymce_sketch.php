@@ -25,4 +25,6 @@ $string['pluginname'] = 'Sketch';
 $string['sketchtitle'] = 'Sketch and Save';
 $string['sketch_description'] = 'Quick sketch in Moodle';
 $string['sketch_long_description'] = 'Draw and edit images inside any editor in Moodle';
+$string['storeinrepo'] = 'Store as image file';
+$string['storeinrepo_desc'] = 'If checked the sketch will be saved as a standard image upload instead of a base64 inline image.';
 $string['insert'] = 'Insert Sketch';
