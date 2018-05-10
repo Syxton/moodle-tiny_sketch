@@ -22,6 +22,7 @@
  */
 
 $string['pluginname'] = 'Sketch';
+$string['privacy:metadata'] = 'The Sketch plugin does not save or export user data.';
 $string['sketchtitle'] = 'Sketch and Save';
 $string['sketch_description'] = 'Quick sketch in Moodle';
 $string['sketch_long_description'] = 'Draw and edit images inside any editor in Moodle';

@@ -13,19 +13,32 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
-
 /**
- * Atto text editor integration version file.
+ * Privacy Subsystem implementation for tinymce_sketch.
  *
  * @package    tinymce_sketch
- * @copyright  2017 Matt Davidson <davidso1@rose-hulman.com>
+ * @copyright  2018 Matt Davidson <davidso1@rose-hulman.edu>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace tinymce_sketch\privacy;
+
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2018051000;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->release   = '1.1';
-$plugin->requires  = 2015111600;        // Requires this Moodle version.
-$plugin->component = 'tinymce_sketch';
-$plugin->maturity = MATURITY_STABLE;
+/**
+ * Privacy Subsystem for tinymce_sketch implementing null_provider.
+ *
+ * @copyright  2018 Matt Davidson <davidso1@rose-hulman.edu>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+class provider implements \core_privacy\local\metadata\null_provider {
+    /**
+     * Get the language string identifier with the component's language
+     * file to explain why this plugin stores no data.
+     *
+     * @return  string
+     */
+    public static function get_reason() : string {
+        return 'privacy:metadata';
+    }
+}
