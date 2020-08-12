@@ -1,8 +1,8 @@
 # tinymce_sketch
 
 ## Description
-Adds a simple "Paint" like program to the tinymce editor.  Features include simple shape tools, drawing, typing, colors, undo/redo.
-Utilizes the open source "Literally Canvas" image editor.  http://literallycanvas.com/
+Adds a simple "Paint" like program to the atto editor.  Features include simple shape tools, drawing, typing, colors, undo/redo.
+Utilizes the open source "miniPaint" image editor.  https://github.com/viliusle/miniPaint
 
 ## Installation
 Create the lib/editor/tinymce/plugins/sketch folder and place all files there.
