@@ -46,7 +46,7 @@
             return {
                 longname: ed.getParam('sketchlongdescription'),
                 author: 'Matt Davidson',
-                version: "1.0"
+                version: "2.0"
             };
         }
     });

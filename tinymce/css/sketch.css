@@ -1,0 +1,16 @@
+.fullheight {
+    height: 100%;
+    margin: 0;
+}
+
+.centerbutton {
+    background-color: white;
+    height: 40px;
+    text-align: center;
+}
+
+.sketchsubmit {
+    background-color: white;
+    padding: 5px;
+    margin: 5px;
+}
