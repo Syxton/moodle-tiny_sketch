@@ -83,23 +83,22 @@
           var selected = window.parent.tinyMCE.activeEditor.selection.getNode();
           if (selected.tagName == "IMG") {
               var image = new Image();
+							image.crossOrigin = "anonymous";
               image.src = selected.src;
 
 							var iframeBody = $(frameElement);
 							var sketchcontent = iframeBody.contents()[0].defaultView;
 							var Layers = sketchcontent.Layers;
 
-							//var Layers = frameElement.contentWindow.Layers;
-
               var name = image.src.replace(/^.*[\\\/]/, '');
               var new_layer = {
                 name: name,
                 type: 'image',
                 data: image,
-                width: image.naturalWidth || image.width,
-                height: image.naturalHeight || image.height,
-                width_original: image.naturalWidth || image.width,
-                height_original: image.naturalHeight || image.height,
+                width: image.naturalWidth || selected.width,
+                height: image.naturalHeight || selected.height,
+                width_original: image.naturalWidth || selected.width,
+                height_original: image.naturalHeight || selected.height,
               };
               Layers.insert(new_layer);
           }
