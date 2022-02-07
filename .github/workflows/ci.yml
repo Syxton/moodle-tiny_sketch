@@ -1,4 +1,4 @@
-name: Atto Sketch Plugin CI
+name: TinyMCE Sketch Plugin CI
 
 on: [push, pull_request]
 
