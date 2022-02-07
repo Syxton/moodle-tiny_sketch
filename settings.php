@@ -26,5 +26,5 @@ defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree) {
     $settings->add(new admin_setting_configcheckbox('tinymce_sketch/storeinrepo',
-        get_string('storeinrepo', 'tinymce_sketch'), get_string('storeinrepo_desc', 'tinymce_sketch'), 0));
+        get_string('storeinrepo', 'tinymce_sketch'), get_string('storeinrepo_desc', 'tinymce_sketch'), 1));
 }

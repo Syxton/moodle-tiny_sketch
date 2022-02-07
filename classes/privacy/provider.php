@@ -23,8 +23,6 @@
 
 namespace tinymce_sketch\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy Subsystem for tinymce_sketch implementing null_provider.
  *

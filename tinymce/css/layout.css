@@ -4,7 +4,7 @@
 	position:relative;
 	overflow: hidden;
 }
-.trn{}
+
 .toggle{
 	cursor: pointer;
 }
@@ -124,7 +124,7 @@ body .sp-preview{
 .logo{
 	position: relative;
 	display: inline-block;
-	float: left;
+	float: right;
 	height: 30px;
 	width: 110px;
 	padding: 5px 5px 5px 36px;
@@ -359,8 +359,8 @@ body .sp-preview{
 	margin-top: 10px;
 }
 .layers_arrow{
-	display:inline-block;
-	float:right;
+	display: inline-block;
+	float: right;
 	margin-left:5px;
 	padding:1px 8px;
 	border:1px solid #444;
