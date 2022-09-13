@@ -1,0 +1,33 @@
+.fullheight {
+    height: 100%;
+    margin: 0;
+}
+
+.submenu .logo {
+    display: none;
+}
+
+.attributes {
+    width: 100%;
+    padding-left: 50px;
+}
+
+.centerbutton {
+    background-color: white;
+    position: fixed;
+    height: 40px;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+}
+
+.sketchsubmit {
+    padding: 5px;
+    margin: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+      height: calc(100vh - 88px) !important;
+  }
+}
