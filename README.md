@@ -1,4 +1,4 @@
-# tinymce_sketch
+# tiny_sketch
 
 ## Description
 Adds a simple "Paint" like program to the atto editor.  Features include simple shape tools, drawing, typing, colors, undo/redo.

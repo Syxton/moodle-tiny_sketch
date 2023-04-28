@@ -1,0 +1,4 @@
+.sketch_iframe {
+    width: 100%;
+    height: calc(100% - 8px);
+}

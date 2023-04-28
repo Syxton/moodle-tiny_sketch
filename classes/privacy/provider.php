@@ -14,17 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 /**
- * Privacy Subsystem implementation for tinymce_sketch.
+ * Privacy Subsystem implementation for tiny_sketch.
  *
- * @package    tinymce_sketch
+ * @package    tiny_sketch
  * @copyright  2018 Matt Davidson <davidso1@rose-hulman.edu>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace tinymce_sketch\privacy;
+namespace tiny_sketch\privacy;
 
 /**
- * Privacy Subsystem for tinymce_sketch implementing null_provider.
+ * Privacy Subsystem for tiny_sketch implementing null_provider.
  *
  * @copyright  2018 Matt Davidson <davidso1@rose-hulman.edu>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
