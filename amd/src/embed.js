@@ -49,7 +49,7 @@ export const SketchEmbed = class {
             type: Modal.types.DEFAULT,
             title: getString('sketchtitle', 'tiny_sketch'),
             body: Templates.render('tiny_sketch/sketch_iframe', {
-                src: 'src="../lib/editor/tiny/plugins/sketch/miniPaint/sketch.html"'
+                src: '../lib/editor/tiny/plugins/sketch/miniPaint/sketch.html'
             })
         }).then(modal => {
             modal.getRoot().on(ModalEvents.hidden, () => {
