@@ -25,6 +25,7 @@ import {get_string as getString} from 'core/str';
 import * as ModalEvents from 'core/modal_events';
 import Templates from 'core/templates';
 import * as Modal from 'core/modal_factory';
+import Config from 'core/config';
 
 export const SketchEmbed = class {
     editor = null;
@@ -49,7 +50,7 @@ export const SketchEmbed = class {
             type: Modal.types.DEFAULT,
             title: getString('sketchtitle', 'tiny_sketch'),
             body: Templates.render('tiny_sketch/sketch_iframe', {
-                src: '../lib/editor/tiny/plugins/sketch/miniPaint/sketch.html'
+                src: this.getIframeURL()
             })
         }).then(modal => {
             modal.getRoot().on(ModalEvents.hidden, () => {
@@ -63,4 +64,8 @@ export const SketchEmbed = class {
         }).catch();
     }
 
+    getIframeURL = () => {
+        const url = new URL(`${Config.wwwroot}/lib/editor/tiny/plugins/sketch/miniPaint/sketch.html`);
+        return url.toString();
+    };
 };
