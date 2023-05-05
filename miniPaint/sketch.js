@@ -32,7 +32,7 @@ function open_image(image){
 	if(typeof image == 'string'){
 		image = document.getElementById(image);
 	}
-	var Layers = window.parent.document.getElementById('sketch-iframe').contentWindow.Layers;
+	var Layers = window.parent.document.getElementById('tinymce_sketch-iframe').contentWindow.Layers;
 	var name = image.src.replace(/^.*[\\\/]/, '');
 	var new_layer = {
 		name: name,

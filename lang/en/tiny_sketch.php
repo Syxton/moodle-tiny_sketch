@@ -17,8 +17,8 @@
 /**
  * Strings for component 'tiny_sketch', language 'en'.
  *
- * @copyright Panopto 2009 - 2016
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @copyright  2023 Matt Davidson <davidso1@rose-hulman.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['pluginname'] = 'Sketch';
