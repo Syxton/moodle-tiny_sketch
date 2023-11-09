@@ -21,40 +21,16 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-import {
-    buttonName,
-} from './common';
+import {buttonName} from './common';
+import {addMenubarItem, addToolbarButton, addContextmenuItem} from 'editor_tiny/utils';
 import uploadFile from 'editor_tiny/uploader';
-import {
-    addContextmenuItem,
-} from 'editor_tiny/utils';
-
-const configureMenu = (menu) => {
-    // Add the Sketch icon to the end of the Tools menu.
-    menu.tools.items += ` ${buttonName}`;
-
-    return menu;
-};
-
-const configureToolbar = (toolbar) => {
-    // The toolbar contains an array of named sections.
-    // The Moodle integration ensures that there is a section called 'content'.
-
-    return toolbar.map((section) => {
-        if (section.name === 'content') {
-            // Insert the image, and embed, buttons at the start of it.
-            section.items.unshift(buttonName);
-        }
-        return section;
-    });
-};
 
 export const configure = (instanceConfig) => {
     // Update the instance configuration to add the Media menu option to the menus and toolbars and upload_handler.
     return {
         contextmenu: addContextmenuItem(instanceConfig.contextmenu, buttonName),
-        menu: configureMenu(instanceConfig.menu),
-        toolbar: configureToolbar(instanceConfig.toolbar),
+        menu: addMenubarItem(instanceConfig.menu, "insert", buttonName),
+        toolbar: addToolbarButton(instanceConfig.toolbar, "content", buttonName),
 
         // eslint-disable-next-line camelcase
         images_upload_handler: (blobInfo, progress) => uploadFile(
