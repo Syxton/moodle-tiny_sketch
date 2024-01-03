@@ -1,0 +1,7 @@
+Find and remove the following from dist/bundle.js:
+
+{name:"media",title:"Search Images",on_activate:"on_activate",attributes:{size:30}},
+
+and
+
+{name:"Search Images",ellipsis:!0,target:"file/open.search"},
