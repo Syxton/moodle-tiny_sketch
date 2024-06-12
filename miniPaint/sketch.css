@@ -1,3 +1,7 @@
+.wrapper {
+    padding-bottom: 50px;
+}
+
 .fullheight {
     height: 100%;
     margin: 0;
@@ -13,17 +17,40 @@
 }
 
 .centerbutton {
+    color: #000;
     background-color: white;
     position: fixed;
-    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100%;
     bottom: 0;
 }
 
+.centerbutton #id_enteralt {
+    min-width: 70%;
+    max-height: 40px;
+    margin-left: 10px;
+    background-color: #fff;
+    color: #000;
+}
+.enteralt-container {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 80%;
+}
+
 .sketchsubmit {
     padding: 5px;
     margin: 5px;
+}
+
+#wordcount {
+    display: inline;
 }
 
 @media screen and (max-width: 700px) {
