@@ -85,7 +85,18 @@
         <div id="popups"></div>
 
         <div class="centerbutton">
-            <button class="sketchsubmit">Insert Sketch</button>
+            <div class="enteralt-container">
+                <label class="col-form-label d-inline" for="id_enteralt">
+                    Describe this image for someone who cannot see it
+                    <div id="wordcount" class="d-flex justify-content-end small">
+                        (<span id="currentcount">0</span><span id="maximumcount">/125</span>)
+                    </div>
+                </label>
+                <textarea name="enteralt" id="id_enteralt" class="form-control " rows="3" maxlength="125"></textarea>
+            </div>
+            <div class='btn-insert'>
+                <button class="sketchsubmit">Insert Sketch</button>
+            </div>
         </div>
     </body>
 </html>

@@ -6,16 +6,33 @@
 $(document).ready(function() {
     setTimeout(function() {
         var selected = window.parent.tinyMCE.activeEditor.selection.getNode();
-        if (selected.tagName == "IMG") {
+        if (selected.tagName === "IMG") {
+			$('#id_enteralt').val(selected.alt);
             open_image(selected);
         } else {
             open_image(); // Open blank testimage.png if none is found.
         }
 
+		// Set the current character count based on the image existing alt text.
+		var existingAlt = selected.alt;
+		if (existingAlt) {
+			var existingWordCount = existingAlt.length;
+			$('#currentcount').text(existingWordCount);
+		}
+
+		$("#id_enteralt").on("input keyup", function() {
+			var text = $(this).val();
+			var charCount = text.length;
+
+			// Update the current character count display.
+			$("#currentcount").text(charCount);
+		});
+
         $('.sketchsubmit').click(function(e) {
             e.preventDefault();
+			var alt = $('#id_enteralt').val();
             var dataURI = $('#canvas_minipaint')[0].toDataURL();
-            window.parent.tinyMCE.activeEditor.execCommand('mceInsertContent', 0, '<img src="'+dataURI+'" />');
+			window.parent.tinyMCE.activeEditor.execCommand('mceInsertContent', 0, '<img src="'+dataURI+'" alt="'+alt+'"/>');
             $(window.parent.document).find(".modal").find('.close').click();
         });
     }, 200);
