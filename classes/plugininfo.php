@@ -59,10 +59,8 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menu
         // - Not logged in or guest.
         // - Files are not allowed.
         // - Only URL are supported.
-        $canhavefiles = !empty($options['maxfiles']);
-        $canhaveexternalfiles = !empty($options['return_types']) && ($options['return_types'] & FILE_EXTERNAL);
 
-        return isloggedin() && !isguestuser() && $canhavefiles && $canhaveexternalfiles;
+        return isloggedin() && !isguestuser() && !empty($options['maxfiles']);
     }
 
     /**
@@ -102,11 +100,22 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menu
         array $fpoptions,
         ?editor $editor = null
     ): array {
-        // TODO Fetch the actual permissions.
-        $permissions['filepicker'] = true;
+        $sesskey = sesskey();
 
-        return array_merge([
-            'permissions' => $permissions,
-        ]);
+        $params = [
+            'contextid' => $context->id,
+            'sesskey' => $sesskey,
+            'forceaccessibility' => get_config('tiny_sketch', 'forceaccessibility'),
+        ];
+
+        $data = [
+            'params' => $params,
+            'fpoptions' => $fpoptions
+        ];
+
+        return [
+            'data' => $data,
+            'filepicker' => true,
+        ];
     }
 }
