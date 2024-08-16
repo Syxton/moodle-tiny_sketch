@@ -23,8 +23,8 @@
 
 import {get_string as getString} from 'core/str';
 import {getButtonImage} from 'editor_tiny/utils';
-import {component, buttonName, icon} from './common';
-import {SketchEmbed} from './embed';
+import {component, buttonName, icon} from 'tiny_sketch/common';
+import {SketchEmbed} from 'tiny_sketch/embed';
 
 export const getSetup = async() => {
     const isImage = (node) => node.nodeName.toLowerCase() === 'img';

@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - http://moodle.org/
+// This file is part of Moodle - https://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,10 +12,10 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Atto text editor integration version file.
+ * Settings for the Tiny Sketch plugin.
  *
  * @package    tiny_sketch
  * @copyright  2017 Matt Davidson <davidso1@rose-hulman.com>
@@ -24,8 +24,14 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024010300.01;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->release   = '4.2.1';           // The plugin's latest Moodle version tested with.
-$plugin->requires  = 2022112800;        // Requires this Moodle version.
-$plugin->component = 'tiny_sketch';
-$plugin->maturity = MATURITY_STABLE;
+if ($hassiteconfig) {
+    if ($ADMIN->fulltree) {
+        // Force popup for accessibility.
+        $settings->add(new admin_setting_configcheckbox(
+            'tiny_sketch/forceaccessibility',
+            get_string('forceaccessibility', 'tiny_sketch'),
+            get_string('forceaccessibility_desc', 'tiny_sketch'),
+            0));
+        $settings->add($setting);
+    }
+}

@@ -16,9 +16,10 @@
 import {getTinyMCE} from 'editor_tiny/loader';
 import {getPluginMetadata} from 'editor_tiny/utils';
 
-import {component, pluginName} from 'tiny_sketch/common';
 import * as Commands from 'tiny_sketch/commands';
 import * as Configuration from 'tiny_sketch/configuration';
+import * as Options from 'tiny_sketch/options';
+import {component, pluginName} from 'tiny_sketch/common';
 
 /**
  * Tiny Sketch plugin for Moodle.
@@ -28,6 +29,7 @@ import * as Configuration from 'tiny_sketch/configuration';
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+// eslint-disable-next-line no-async-promise-executor
 export default new Promise(async(resolve) => {
     const [
         tinyMCE,
@@ -40,6 +42,9 @@ export default new Promise(async(resolve) => {
     ]);
 
     tinyMCE.PluginManager.add(`${component}/plugin`, (editor) => {
+        // Register options.
+        Options.register(editor);
+
         // Setup the Commands (buttons, menu items, and so on).
         setupCommands(editor);
 
