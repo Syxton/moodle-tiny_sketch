@@ -58,7 +58,6 @@ class plugininfo extends plugin implements plugin_with_buttons, plugin_with_menu
         // Disabled if:
         // - Not logged in or guest.
         // - Files are not allowed.
-        // - Only URL are supported.
 
         return isloggedin() && !isguestuser() && !empty($options['maxfiles']);
     }
