@@ -12,6 +12,8 @@ $(document).ready(function() {
             open_image(); // Open blank testimage.png if none is found.
         }
 
+		$(".tox-pop", top.document).remove();
+
         $('.sketchsubmit').click(function(e) {
 			e.preventDefault();
 			let id = Date.now();
@@ -23,12 +25,25 @@ $(document).ready(function() {
 				if (window.parent.tinyMCE.activeEditor.options.get("tiny_sketch/plugin:data").params.forceaccessibility == '1') {
 					// Check if media plugin is enabled.
 					if (window.parent.tinyMCE.activeEditor.hasPlugin("tiny_media/plugin")) {
-						window.parent.tinyMCE.activeEditor.selection.select($(window.parent.tinyMCE.activeEditor.iframeElement).contents().find("img#" + id)[0], true);
-						$(window.parent.tinyMCE.activeEditor.container).find("button[title='Image']").trigger("click");
+						let code = `
+							function sketch_accessbility_open() {
+								tinyMCE.activeEditor.selection.select($(tinyMCE.activeEditor.iframeElement).contents().find("img#" + "` + id + `")[0], true);
+								$(tinyMCE.activeEditor.container).find("button[title='Image']").trigger("click");
+								setTimeout(function () {
+									$(".tox-pop").remove();
+								}, 200);
+							}
+						`;
+						$("#sketch_accessbility_script", top.document).remove();
+						$("body", top.document).append($("<script />", {
+							id: "sketch_accessbility_script",
+							html: code,
+						}))
+						window.parent.sketch_accessbility_open();
 					}
 				}
 				// Close window.
-				$(window.parent.document).find(".modal").find('.close').click();
+				$(".modal .close", top.document).click();
 			}, 200);
         });
     }, 200);

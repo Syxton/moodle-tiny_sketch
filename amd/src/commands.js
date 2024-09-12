@@ -76,5 +76,9 @@ export const getSetup = async() => {
             position: 'node',
             scope: 'node'
         });
+
+        editor.ui.registry.addContextMenu(buttonName, {
+            update: () =>  '',
+        });
     };
 };
