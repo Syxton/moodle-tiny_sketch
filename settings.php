@@ -32,6 +32,5 @@ if ($hassiteconfig) {
             get_string('forceaccessibility', 'tiny_sketch'),
             get_string('forceaccessibility_desc', 'tiny_sketch'),
             0));
-        $settings->add($setting);
     }
 }
