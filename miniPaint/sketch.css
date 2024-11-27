@@ -26,6 +26,10 @@
     margin: 5px;
 }
 
+.main_menu > ul.menu_dropdown {
+    max-height: calc(100vh - 90px) !important;
+}
+
 @media screen and (max-width: 700px) {
   .wrapper {
       height: calc(100vh - 88px) !important;
