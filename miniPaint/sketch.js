@@ -43,7 +43,7 @@ $(document).ready(function() {
 					}
 				}
 				// Close window.
-				$(".modal .close", top.document).click();
+				$(window.parent.document).find('.modal .close, .modal .btn-close').click();
 			}, 200);
         });
     }, 200);
