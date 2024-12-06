@@ -30,6 +30,10 @@
     max-height: calc(100vh - 90px) !important;
 }
 
+.wrapper .sidebar_right, .wrapper .sidebar_left {
+    max-height: calc(100vh - 120px) !important;
+}
+
 @media screen and (max-width: 700px) {
   .wrapper {
       height: calc(100vh - 88px) !important;
