@@ -30,12 +30,24 @@
     max-height: calc(100vh - 90px) !important;
 }
 
-.wrapper .sidebar_right, .wrapper .sidebar_left {
+.wrapper .sidebar_right,
+.wrapper .sidebar_left,
+.wrapper .middle_area {
     max-height: calc(100vh - 120px) !important;
 }
 
 @media screen and (max-width: 700px) {
-  .wrapper {
-      height: calc(100vh - 88px) !important;
-  }
+    .wrapper {
+        height: calc(100vh - 88px) !important;
+    }
+
+    .main_menu > ul.menu_dropdown {
+        max-height: calc(100vh - 100px) !important;
+    }
+
+    .wrapper .sidebar_right,
+    .wrapper .sidebar_left,
+    .wrapper .middle_area {
+        max-height: calc(100vh - 150px) !important;
+    }
 }
