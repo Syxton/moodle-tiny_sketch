@@ -56,10 +56,18 @@ export const SketchEmbed = class {
             modal.getRoot().on(ModalEvents.hidden, () => {
                 modal.destroy();
             });
+
+            modal.getRoot().on(ModalEvents.shown, () => {
+                const modalElement = modal.getRoot().get(0);
+                const dialog = modalElement.querySelector('.modal-dialog');
+                const content = modalElement.querySelector('.modal-content');
+                const body = modalElement.querySelector('.modal-body');
+
+                dialog.style.cssText = "max-width: unset;width:100%;height:100vh;margin:0;padding:0;";
+                content.style.cssText = "max-height: unset;height:100vh;";
+                body.style.cssText = "padding:0";
+            });
             modal.show();
-            document.querySelector('.modal-dialog').style.cssText = "max-width: unset;width:100%;height:100vh;margin:0;padding:0;";
-            document.querySelector('.modal-content').style.cssText = "max-height: unset;height:100vh;";
-            document.querySelector('.modal-body').style.cssText = "padding:0";
             return modal;
         }).catch();
     }
