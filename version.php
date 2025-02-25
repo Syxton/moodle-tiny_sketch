@@ -24,8 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2024091200;        // The current plugin version (Date: YYYYMMDDXX).
-$plugin->release   = '4.4.1';           // The plugin's latest Moodle version tested with.
-$plugin->requires  = 2022112800;        // Requires this Moodle version.
+$plugin->version   = 2025062700;        // The current plugin version (Date: YYYYMMDDXX).
+$plugin->release   = '5.0.0';           // The plugin's latest Moodle version tested with.
+$plugin->requires  = 2024100700;        // Requires this Moodle version.
 $plugin->component = 'tiny_sketch';
 $plugin->maturity = MATURITY_STABLE;
