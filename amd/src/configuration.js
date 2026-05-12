@@ -21,9 +21,9 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-import { buttonName } from 'tiny_sketch/common';
+import {buttonName} from 'tiny_sketch/common';
 import uploadFile from 'editor_tiny/uploader';
-import { addContextmenuItem } from 'editor_tiny/utils';
+import {addContextmenuItem} from 'editor_tiny/utils';
 
 const configureMenu = (menu) => {
     // Add the Sketch icon to the end of the Tools menu.

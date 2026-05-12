@@ -78,7 +78,7 @@ export const getSetup = async() => {
         });
 
         editor.ui.registry.addContextMenu(buttonName, {
-            update: () =>  '',
+            update: () => '',
         });
     };
 };

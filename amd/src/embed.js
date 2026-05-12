@@ -68,7 +68,9 @@ export const SketchEmbed = class {
             });
             modal.show();
             return modal;
-        }).catch();
+        }).catch((error) => {
+            return error;
+        });
     }
 
     getIframeURL = () => {
