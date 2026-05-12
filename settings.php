@@ -27,10 +27,13 @@ defined('MOODLE_INTERNAL') || die();
 if ($hassiteconfig) {
     if ($ADMIN->fulltree) {
         // Force popup for accessibility.
-        $settings->add(new admin_setting_configcheckbox(
-            'tiny_sketch/forceaccessibility',
-            get_string('forceaccessibility', 'tiny_sketch'),
-            get_string('forceaccessibility_desc', 'tiny_sketch'),
-            0));
+        $settings->add(
+            new admin_setting_configcheckbox(
+                'tiny_sketch/forceaccessibility',
+                get_string('forceaccessibility', 'tiny_sketch'),
+                get_string('forceaccessibility_desc', 'tiny_sketch'),
+                0
+            )
+        );
     }
 }
