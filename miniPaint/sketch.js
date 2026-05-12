@@ -27,15 +27,15 @@ $(document).ready(function() {
 					if (window.parent.tinyMCE.activeEditor.hasPlugin("tiny_media/plugin")) {
 						let code = `
 							function sketch_accessbility_open() {
-								tinyMCE.activeEditor.selection.select($(tinyMCE.activeEditor.iframeElement).contents().find("img#" + "` + id + `")[0], true);
-								$(tinyMCE.activeEditor.container).find("button[title='Image']").trigger("click");
+								tinyMCE.activeEditor.selection.select(jQuery(tinyMCE.activeEditor.iframeElement).contents().find("img#" + "` + id + `")[0], true);
+								jQuery(tinyMCE.activeEditor.container).find("button[title='Image']").trigger("click");
 								setTimeout(function () {
-									$(".tox-pop").remove();
+									jQuery(".tox-pop").remove();
 								}, 200);
 							}
 						`;
-						$("#sketch_accessbility_script", top.document).remove();
-						$("body", top.document).append($("<script />", {
+						jQuery("#sketch_accessbility_script", top.document).remove();
+						jQuery("body", top.document).append(jQuery("<script />", {
 							id: "sketch_accessbility_script",
 							html: code,
 						}))
